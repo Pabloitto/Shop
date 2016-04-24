@@ -1,0 +1,15 @@
+﻿.file-uploader-container {
+    min-height: 30px;
+    width: 280px;
+    height:auto;
+    border:dashed 1px #bdbdbd;
+}
+
+.file-uploader-wrap{
+    margin-left: 5px;
+    padding-top: 4px;
+}
+
+.drop-hover{
+    border:dashed 1px #fd9039;
+}

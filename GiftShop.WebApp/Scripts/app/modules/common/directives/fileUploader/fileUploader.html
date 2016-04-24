@@ -1,0 +1,13 @@
+﻿<link ng-href="{{stylesPath}}" rel="stylesheet"/>
+<form enctype="multipart/form-data" method="post" action="{{fileUploaderOptions.action}}">
+    <div class="file-uploader-container">
+        <div class="file-uploader-wrap">
+            <img ng-src="{{imageUrl}}" alt="" />
+            <span ng-if="!fileName">DROP FILE TO ATTACH OR <a href="javascript:void(0);" class="browse-button" ng-click="triggerFileChooser();">BROWSE</a></span>
+            <span ng-if="fileName">{{fileName}}</span>
+            <a ng-if="isAttached();" href="javascript:void(0);" ng-click="cleanFile();">Clean</a>
+            <input name="file1" class="hidden file-uploader" type="file" id="file1" accept="text/plain" file-change file-change-options="fileUploaderOptions.fileChangeOptions" />
+        </div>
+    </div>
+    <input ng-repeat="p in fileUploaderOptions.parameters" name="{{p.name}}" type="hidden" value="{{p.getValue()}}" />
+</form>

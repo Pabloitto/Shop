@@ -1,0 +1,17 @@
+﻿<div class="panel panel-success" ng-init="handleInit()">
+    <div class="panel-heading">Login</div>
+    <div class="panel-body">
+        <div class="card card-container">
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputUser" class="form-control" placeholder="Account" required autofocus ng-model="loginModel.account" />
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required ng-model="loginModel.password" />
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" ng-click="signIn()">Sign In</button>
+            </form>
+            <a ng-href="#/account" class="add-account">Do you want a new account ? </a>
+        </div>
+    </div>
+    <div ng-if="errors" class="panel-footer panel-danger">
+        {{errors}}
+    </div>
+</div>

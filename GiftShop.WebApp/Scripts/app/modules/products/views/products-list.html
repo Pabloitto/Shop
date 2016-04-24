@@ -1,0 +1,71 @@
+﻿<div ng-init="handleInit()">
+    <div ng-if="auth">
+        <navigation-bar></navigation-bar>
+        <tab-menu tab-menu-options="tabOptions"></tab-menu>
+        <div id="products">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <br>
+                    <ul class="nav nav-pills nav-stacked list-unstyled">
+                        <li>
+                            <a href="javascript:" ng-click="handleFilter(-1)">ALL
+                            </a>
+                        </li>
+                        <li ng-repeat="category in categories">
+                            <a href="javascript:" ng-click="handleFilter(category)">{{category.Name}} 
+                        <span class="badge" style="float: right;">{{category.Stock}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <br>
+                </div>
+                <div class="col-xs-12 col-md-9 col-lg-9">
+                    <table class="table table-hover">
+                        <tr style="background-color: #ffffff;">
+                            <th>Code</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                        </tr>
+                        <tr class="tableBG" ng-repeat="product in products">
+                            <td>{{product.Code}}</td>
+                            <td>
+                                <img ng-src="{{product.Photo}}" class="img-rounded" style="width: 100px; height: 100px; border: solid #666666 1px;" alt="..." />
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <h4>{{product.Name}}
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            {{product.Description}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$ {{product.Price}}</td>
+                            <td>{{product.Stock}}</td>
+                            <td>
+                                <input type="button" class="btn btn-success" value="See details" ng-click="handleSeeDetails(product.ProductId)" />
+                            </td>
+                            <td ng-if="auth == 'Admin'">
+                                <input type="button" class="btn-sm btn-primary" value="Edit Product" ng-click="handleEditProduct(product.ProductId)" />
+                            </td>
+                            <td ng-if="auth == 'Admin'">
+                                <input type="button" class="btn-sm btn-danger" value="Delete Product" ng-click="handleDeleteProduct(product.ProductId)" />
+                            </td>
+                        </tr>
+                        <tr ng-if="auth == 'Admin'">
+                            <td>
+                                <input type="button" class="btn btn-primary" value="Create new product" ng-click="handleCreteNewProduct()" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!auth">
+        Forbidden <a ng-href="#/login">Back</a>
+    </div>
+</div>

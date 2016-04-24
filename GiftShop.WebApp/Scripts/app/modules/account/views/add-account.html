@@ -1,0 +1,25 @@
+﻿<div class="panel panel-primary" ng-init="handleInit()">
+    <div class="panel-heading">Accounts</div>
+    <div class="panel-body">
+        <form ng-submit="handleSave()">
+            <div class="form-group">
+                <label for="name">Name * </label>
+                <input type="text" class="form-control" id="name" required ng-model="accountModel.AccountName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="password">Password * </label>
+                <input type="password" class="form-control" id="password" ng-model="accountModel.Password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="account-type">Account Type * </label>
+                <select class="custom-dropdown" id="account-type" required ng-model="accountModel.UserType" ng-options="item.Id as item.Text for item in accountTypes">
+                    <option value="">Choose one</option>
+                 </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-default" ng-click="handleCancel()">Cancel</button>
+            <button type="button" class="btn btn-default" ng-click="handleReturn()">Return</button>
+        </form>
+    </div>
+    <div ng-if="errors" class="panel-footer"></div>
+</div>

@@ -1,0 +1,5 @@
+﻿<ul ng-if="visible" class="nav nav-justified" style="color: #ffffff;">
+    <li ng-repeat="menuItem in menu" ng-class="menuItem.isActive ? 'active' : ''" ng-click="setActive(menuItem)">
+        <a href="{{menuItem.href}}">{{menuItem.label}}</a>
+    </li>
+</ul>

@@ -1,0 +1,29 @@
+﻿<div ng-init="handleInit()">
+    <navigation-bar ng-if="auth" ></navigation-bar>
+    <div ng-if="auth" class="panel panel-primary">
+        <div class="panel-heading">Product details</div>
+        <div class="panel-body">
+            <div class="row" ng-init="handleInit()">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img ng-src="{{productModel.Photo}}" alt="..." />
+                        <div class="caption">
+                            <h3>{{productMpdel.Name}}</h3>
+                            <p>{{productModel.Description}}</p>
+                            <p>
+                                <input type="number" class="form-control" min="1" max="{{productModel.Stock}}" ng-model="data.quantity" />
+                            </p>
+                            <p>
+                                <a href="javascript:" class="btn btn-primary" role="button" ng-click="handleAddToCart()">Add to cart</a>
+                                <a ng-href="javascript:" ng-click="back()" class="btn btn-default" role="button">Back</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!auth">
+        Forbidden <a ng-href="#/login">Back</a>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿<div ng-init="handleInit()">
+    <div ng-if="auth">
+        <navigation-bar></navigation-bar>
+        <tab-menu tab-menu-options="tabOptions"></tab-menu>
+        <div id="home">
+            <div class="row">
+                <div class="col-md-12">
+                    <carousel></carousel>
+                </div>
+                <div class="col-md-12">
+                    <div class="row" style="background-color: #eaeaea;">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" ng-repeat="product in products">
+                            <br>
+                            <div class="panel panel-primary ">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        {{product.Name}}
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row center-block">
+                                        <img ng-src="{{product.Photo}}" class="center-block" style="width: 150px; height: 150px;" alt="..." />
+                                        <input type="button" class="btn btn-success" value="See details" ng-click="handleSeeDetails(product.ProductId)" />
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row well-sm">
+                                        <div class="col-xs-6 col-md-4 col-lg-4">
+                                            <img ng-src="{{product.CompanyPhoto}}" class="center-block" style="width: 65px; height: 20px;" />
+                                        </div>
+                                        <div class="col-xs-6 col-md-8 col-lg-8 text-right">
+                                            $ {{product.Price}} MXN
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!auth">
+        Forbidden <a ng-href="#/login">Back</a>
+    </div>
+</div>

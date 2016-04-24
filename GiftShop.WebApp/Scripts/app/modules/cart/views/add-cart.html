@@ -1,0 +1,42 @@
+﻿<div ng-init="handleInit()">
+    <navigation-bar ng-if="auth"></navigation-bar>
+    <div  class="panel panel-default">
+        <div class="panel-heading">My cart</div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Sub-Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="product in cart">
+                        <td>{{product.Name}}</td>
+                        <td>{{product.Quantity}}</td>
+                        <td>{{product.UnitPrice}}</td>
+                        <td>$ {{product.SubTotal}}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" ng-click="handleRemove(product)">Remove from cart</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right" style="float: none;">
+                Total : $ {{getTotal()}}
+            </div>
+            <br>
+            <br>
+            <button type="button" class="btn btn-default" ng-click="back()">Return</button>
+            <button ng-if="auth == 'Admin' || auth == 'Registered'" type="button" class="btn btn-primary">Pay</button>
+        </div>
+    </div>
+    <div ng-if="!auth">
+        Forbidden <a ng-href="#/login">Back</a>
+    </div>
+</div>

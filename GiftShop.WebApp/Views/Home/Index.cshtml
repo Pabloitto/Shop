@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="GiftShop">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gift Shop</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/app/main.css" rel="stylesheet" />
+    <link href="~/Content/app/login.css" rel="stylesheet" />
+    <link href="~/Content/app/justified-nav.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/angular.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/angular-route.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/angular-local-storage.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/underscore.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.form.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/main.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/common/directives/fileUploader/fileUploader.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/common/directives/fileUploader/fileChange.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/home/controllers/home-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/products/controllers/products-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/layout/directives/navigation/navigation.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/layout/directives/tab-menu/tab-menu.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/home/directives/carousel.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/products/services/products-service.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/products/controllers/products-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/products/controllers/products-catalog-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/products/controllers/products-details-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/cart/controllers/cart-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/cart/services/cart-service.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/login/controllers/login-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/login/services/login-service.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/account/controllers/account-controller.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/modules/account/services/account-service.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container" style="margin-top:60px;">
+        <div ng-view></div>
+    </div>
+     <script>
+         window.app.root = '@Url.Content("~/")';
+    </script>
+</body>
+</html>

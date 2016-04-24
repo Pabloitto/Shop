@@ -1,0 +1,58 @@
+﻿.rounded-corner {
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.panel-primary {
+    border-color: #666666;
+}
+
+    .panel-primary > .panel-heading {
+        background-color: #666666;
+        border-color: #666666;
+    }
+
+@media (min-width: 768px) {
+    .navbar-form .form-control {
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 1200px) {
+    ul.nav-pills > li {
+        width: 70%;
+    }
+}
+
+.nav-pills > li.active > a {
+    color: #ffffff;
+    background-color: #3e3e3e;
+}
+
+.nav-pills > li > a {
+    color: black;
+    background-color: #8e8e8e;
+}
+
+
+a:hover, a:visited {
+    text-decoration: none;
+}
+
+tr.tableBG {
+    background-color: #bfbfbf;
+    color: #000000;
+}
+
+tr.tableBG:hover {
+    color: black;
+}
+
+select.custom-dropdown
+{
+    display: block;
+    width: 100%;
+    height: 34px;
+}

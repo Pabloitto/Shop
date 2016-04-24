@@ -1,0 +1,51 @@
+﻿<div ng-init="handleInit()">
+    <div ng-if="auth" class="panel panel-primary">
+        <div class="panel-heading">Products</div>
+        <div class="panel-body">
+            <form ng-submit="handleSave()">
+                <div class="form-group">
+                    <label for="name">Name * </label>
+                    <input type="text" class="form-control" id="name" required ng-model="productModel.Name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" ng-model="productModel.Description" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category * </label>
+                    <select class="custom-dropdown" id="category" required ng-model="productModel.CategoryId" ng-options="item.CategoryId as item.Name for item in categories">
+                        <option value="">Choose one</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="code">Code * </label>
+                    <input type="text" class="form-control" id="code" required ng-model="productModel.Code" placeholder="Code">
+                </div>
+                <div class="form-group">
+                    <label for="price">Unit Price * </label>
+                    <input type="text" class="form-control" id="price" required ng-model="productModel.Price" placeholder="Unit Price">
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock * </label>
+                    <input type="text" class="form-control" id="stock" required ng-model="productModel.Stock" placeholder="Stock">
+                </div>
+                <div class="form-group">
+                    <label for="photo">Photo * </label>
+                    <file-uploader file-uploader-options="fileUploaderPhotoOptions"></file-uploader>
+                </div>
+                <div class="form-group">
+                    <label for="company-photo">Company Photo * </label>
+                    <file-uploader file-uploader-options="fileUploaderCompanyPhotoOptions"></file-uploader>
+                    <!--<input type="text" class="form-control" id="company-photo" required ng-model="productModel.CompanyPhoto" placeholder="Company Photo">-->
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-default" ng-click="handleCancel()">Cancel</button>
+                <button type="button" class="btn btn-default" ng-click="handleReturn()">Return</button>
+            </form>
+        </div>
+        <div ng-if="errors" class="panel-footer"></div>
+    </div>
+    <div ng-if="!auth">
+        Forbidden <a ng-href="#/login">Back</a>
+    </div>
+</div>
